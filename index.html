@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <link href="https://pubnub.github.io/eon/v/eon/0.1.0/eon.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="./bundle.js"></script>
+    <script type="text/javascript">
+        console.log(PubNub);
+        console.log(L.mapbox);
+        console.log(eon);
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position:absolute;
+        top:0;
+        bottom:0;
+        width:100%;
+      }
+    </style>
+    <div id='map'></div>
+    <script>
+      function getNonZeroRandomNumber(){
+        var random = Math.floor(Math.random()*199) - 99;
+        if(random==0) return getNonZeroRandomNumber();
+        return random;
+      }
+    </script>
+    <script>
+      
+      var pubnub = new PubNub({
+        publishKey: 'pub-c-6dbe7bfd-6408-430a-add4-85cdfe856b47',
+        subscribeKey: 'sub-c-2a73818c-d2d3-11e3-9244-02ee2ddab7fe'
+      });
+
+      var channel = 'pubnub-mapbox' + getNonZeroRandomNumber();
+
+      eon.map({
+        pubnub: pubnub,
+        id: 'map',
+        mb_token: 'pk.eyJ1IjoiaWFuamVubmluZ3MiLCJhIjoiZExwb0p5WSJ9.XLi48h-NOyJOCJuu1-h-Jg',
+        mb_id: 'ianjennings.l896mh2e',
+        channel: channel,
+        connect: connect,
+        options: {
+          zoomAnimation: false,
+        },
+      });
+
+      function connect() {
+
+        var point = {
+          latlng: [37.370375, -97.756138]
+        };
+
+        setInterval(function(){
+
+          var new_point = JSON.parse(JSON.stringify(point));
+
+          new_point.latlng = [
+            new_point.latlng[0] + (getNonZeroRandomNumber() * 0.1),
+            new_point.latlng[1] + (getNonZeroRandomNumber() * 0.2)
+          ];
+
+          pubnub.publish({
+            channel: channel,
+            message: [new_point]
+          });
+
+        }, 1000);
+
+      };
+
+    </script>
+</body>
+</html>
+
