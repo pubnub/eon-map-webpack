@@ -5,9 +5,10 @@ module.exports = {
   output: {
       filename: './bundle.js'
   },
-    module: {
-        loaders: [
-            { test: /\.json$/, loader: "json" }
-        ]
-    }
+  module: {
+      loaders: [
+          { test: /\.json$/, loader: "json" },
+          { test: /\.css$/, loader: "style-loader!css-loader" }
+      ]
+  }
 };

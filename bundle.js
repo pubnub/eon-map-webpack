@@ -10078,18 +10078,18 @@
 		"_args": [
 			[
 				{
-					"raw": "mapbox.js",
+					"raw": "mapbox.js@^2.4.0",
 					"scope": null,
 					"escapedName": "mapbox.js",
 					"name": "mapbox.js",
-					"rawSpec": "",
-					"spec": "latest",
-					"type": "tag"
+					"rawSpec": "^2.4.0",
+					"spec": ">=2.4.0 <3.0.0",
+					"type": "range"
 				},
 				"/Users/ian/Development/eon-map-npm"
 			]
 		],
-		"_from": "mapbox.js@latest",
+		"_from": "mapbox.js@>=2.4.0 <3.0.0",
 		"_id": "mapbox.js@2.4.0",
 		"_inCache": true,
 		"_installable": true,
@@ -10106,22 +10106,21 @@
 		"_npmVersion": "3.7.3",
 		"_phantomChildren": {},
 		"_requested": {
-			"raw": "mapbox.js",
+			"raw": "mapbox.js@^2.4.0",
 			"scope": null,
 			"escapedName": "mapbox.js",
 			"name": "mapbox.js",
-			"rawSpec": "",
-			"spec": "latest",
-			"type": "tag"
+			"rawSpec": "^2.4.0",
+			"spec": ">=2.4.0 <3.0.0",
+			"type": "range"
 		},
 		"_requiredBy": [
-			"#USER",
 			"/"
 		],
 		"_resolved": "https://registry.npmjs.org/mapbox.js/-/mapbox.js-2.4.0.tgz",
 		"_shasum": "c43b084a5dd71334c83ee1df28fa67443d73c29c",
 		"_shrinkwrap": null,
-		"_spec": "mapbox.js",
+		"_spec": "mapbox.js@^2.4.0",
 		"_where": "/Users/ian/Development/eon-map-npm",
 		"author": {
 			"name": "Mapbox"
