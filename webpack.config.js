@@ -1,14 +1,15 @@
 module.exports = {
   entry: {
-      javascript: "./entry.js"
+    javascript: "./entry.js"
   },
   output: {
-      filename: './bundle.js'
+    filename: './bundle.js'
   },
   module: {
-      loaders: [
-          { test: /\.json$/, loader: "json" },
-          { test: /\.css$/, loader: "style-loader!css-loader" }
-      ]
+    loaders: [
+      { test: /\.json$/, loader: "json" },
+      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.png$/, loader: "url-loader?limit=100000" },
+    ]
   }
 };

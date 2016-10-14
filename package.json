@@ -10,8 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "eon-map": "^0.3.2",
-    "json-loader": "^0.5.4",
     "mapbox.js": "^2.4.0",
     "pubnub": "^4.1.0"
+  },
+  "devDependencies": {
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "json-loader": "^0.5.4",
+    "css-loader": "^0.25.0"
   }
 }
